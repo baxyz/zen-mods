@@ -8,20 +8,26 @@
   /* Hide original tab movement items to reorganize them */
   #context_moveToStart,
   #context_moveToEnd,
-  #context_moveTabOptions,
   #context_moveToNewWindow {
     display: none !important;
   }
 
+  /* Conditionally hide workspace options based on preference */
+  @media not (-moz-bool-pref: "mod.tab_context_organizer.include_workspace") {
+    #context_moveTabOptions {
+      display: none !important;
+    }
+  }
+
   /* Conditionally hide container options based on preference */
-  @media not (-moz-bool-pref: "mod.tab_context_organizer.include_containers") {
+  @media not (-moz-bool-pref: "mod.tab_context_organizer.include_container") {
     #context_reopenInContainer {
       display: none !important;
     }
   }
 
   /* Conditionally hide device options based on preference */
-  @media not (-moz-bool-pref: "mod.tab_context_organizer.include_devices") {
+  @media not (-moz-bool-pref: "mod.tab_context_organizer.include_device") {
     #context_sendTabToDevice {
       display: none !important;
     }

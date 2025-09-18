@@ -76,31 +76,24 @@
   }
 
   /**
-   * Get custom submenu label from preferences
+   * Check if workspace options should be included
    */
-  function getSubmenuLabel() {
-    return getPreference('mod.tab_context_organizer.submenu_label', CONFIG.DEFAULT_SUBMENU_LABEL);
+  function shouldIncludeWorkspace() {
+    return getPreference('mod.tab_context_organizer.include_workspace', true);
   }
 
   /**
    * Check if containers should be included
    */
   function shouldIncludeContainers() {
-    return getPreference('mod.tab_context_organizer.include_containers', true);
+    return getPreference('mod.tab_context_organizer.include_container', true);
   }
 
   /**
    * Check if device options should be included
    */
   function shouldIncludeDevices() {
-    return getPreference('mod.tab_context_organizer.include_devices', true);
-  }
-
-  /**
-   * Get menu position preference
-   */
-  function getMenuPosition() {
-    return getPreference('mod.tab_context_organizer.menu_position', 'auto');
+    return getPreference('mod.tab_context_organizer.include_device', true);
   }
 
   /**
@@ -121,7 +114,7 @@
     // Create submenu element
     const submenu = document.createXULElement('menu');
     submenu.id = CONFIG.SUBMENU_ID;
-    submenu.setAttribute('label', getSubmenuLabel());
+    submenu.setAttribute('label', CONFIG.DEFAULT_SUBMENU_LABEL);
     submenu.setAttribute('class', 'zen-tab-move-submenu');
 
     // Create menupopup container
@@ -148,6 +141,11 @@
     CONFIG.TARGET_ITEMS.forEach((itemId, index) => {
       const item = document.getElementById(itemId);
       if (item) {
+        // Skip workspace options if disabled in preferences
+        if (itemId === 'context_moveTabOptions' && !shouldIncludeWorkspace()) {
+          return;
+        }
+
         // Skip containers if disabled in preferences
         if (itemId === 'context_reopenInContainer' && !shouldIncludeContainers()) {
           return;
@@ -174,8 +172,8 @@
         // Add to submenu
         menupopup.appendChild(clonedItem);
 
-        // Add separator after workspace options
-        if (itemId === 'context_moveTabOptions' && index < CONFIG.TARGET_ITEMS.length - 1) {
+        // Add separator after basic movement options (moveToEnd)
+        if (itemId === 'context_moveToEnd' && index < CONFIG.TARGET_ITEMS.length - 1) {
           const separator = document.createXULElement('menuseparator');
           menupopup.appendChild(separator);
         }

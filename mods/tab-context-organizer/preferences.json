@@ -6,47 +6,21 @@
     "defaultValue": true
   },
   {
-    "property": "mod.tab_context_organizer.submenu_label",
-    "label": "Submenu Label",
-    "type": "string",
-    "defaultValue": "Move Tab",
-    "placeholder": "e.g: Move Tab, Organize, Actions..."
-  },
-  {
-    "property": "mod.tab_context_organizer.include_containers",
-    "label": "Include Container Options",
+    "property": "mod.tab_context_organizer.include_workspace",
+    "label": "Include Move to Another Workspace",
     "type": "checkbox",
     "defaultValue": true
   },
   {
-    "property": "mod.tab_context_organizer.include_devices",
-    "label": "Include Send to Device",
+    "property": "mod.tab_context_organizer.include_device",
+    "label": "Include Send to Another Device",
     "type": "checkbox",
     "defaultValue": true
   },
   {
-    "property": "mod.tab_context_organizer.menu_position",
-    "label": "Menu Position",
-    "type": "dropdown",
-    "defaultValue": "auto",
-    "placeholder": "Select position",
-    "options": [
-      {
-        "label": "Automatic",
-        "value": "auto"
-      },
-      {
-        "label": "Top of menu",
-        "value": "top"
-      },
-      {
-        "label": "Bottom of menu",
-        "value": "bottom"
-      },
-      {
-        "label": "Before Close Tab",
-        "value": "before-close"
-      }
-    ]
+    "property": "mod.tab_context_organizer.include_container",
+    "label": "Include Open in Another Container",
+    "type": "checkbox",
+    "defaultValue": true
   }
 ]

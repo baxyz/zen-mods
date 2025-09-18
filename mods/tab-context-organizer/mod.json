@@ -26,10 +26,9 @@
     "enabled": true,
     "configurable": [
       "mod.tab_context_organizer.enabled",
-      "mod.tab_context_organizer.submenu_label",
-      "mod.tab_context_organizer.include_containers",
-      "mod.tab_context_organizer.include_devices",
-      "mod.tab_context_organizer.menu_position"
+      "mod.tab_context_organizer.include_workspace",
+      "mod.tab_context_organizer.include_device",
+      "mod.tab_context_organizer.include_container"
     ]
   },
   "installation": {
