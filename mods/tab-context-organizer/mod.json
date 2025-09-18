@@ -1,0 +1,30 @@
+{
+  "name": "tab-context-organizer",
+  "displayName": "Tab Context Menu Organizer",
+  "version": "1.0.0",
+  "description": "Reorganizes tab context menu by grouping related tab movement options into submenus",
+  "author": "Berenger",
+  "license": "MIT",
+  "type": "userChrome",
+  "compatibility": {
+    "zen": ">=1.0.0",
+    "firefox": ">=115.0"
+  },
+  "features": [
+    "Groups tab movement options into 'Move Tab' submenu",
+    "Includes: Move to start/end, Move to new window, Move to workspace",
+    "Includes: Send to device, Open in container"
+  ],
+  "files": {
+    "userChrome": "userChrome.css",
+    "userScript": "tabContextOrganizer.js"
+  },
+  "installation": {
+    "instructions": [
+      "Copy userChrome.css content to your chrome/userChrome.css file",
+      "Copy userScript content to your chrome folder or use as userscript",
+      "Restart Zen browser"
+    ]
+  },
+  "tags": ["context-menu", "tabs", "ui", "organization"]
+}

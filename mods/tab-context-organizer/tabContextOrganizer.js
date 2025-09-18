@@ -1,0 +1,186 @@
+// ==UserScript==
+// @name         Tab Context Menu Organizer for Zen Browser
+// @version      1.0.0
+// @description  Reorganizes tab context menu by grouping tab movement options
+// @author       Berenger
+// @match        chrome://browser/content/browser.xhtml
+// @grant        none
+// ==/UserScript==
+
+(() => {
+  'use strict';
+
+  console.log('[Tab Context Organizer] Initializing...');
+
+  /**
+   * Configuration for the mod
+   */
+  const CONFIG = {
+    SUBMENU_ID: 'zen-tab-move-submenu',
+    SUBMENU_LABEL: 'Move Tab',
+    TARGET_ITEMS: [
+      'context_moveToStart',
+      'context_moveToEnd',
+      'context_moveToNewWindow',
+      'context_moveTabOptions', // Workspace options
+      'context_sendTabToDevice',
+      'context_reopenInContainer',
+    ],
+    LABELS: {
+      context_moveToStart: 'To Beginning',
+      context_moveToEnd: 'To End',
+      context_moveToNewWindow: 'To New Window',
+      context_moveTabOptions: 'To Workspace',
+      context_sendTabToDevice: 'Send to Device',
+      context_reopenInContainer: 'Open in Container',
+    },
+    CSS_CLASSES: {
+      context_moveToStart: 'zen-tab-move-start',
+      context_moveToEnd: 'zen-tab-move-end',
+      context_moveToNewWindow: 'zen-tab-move-window',
+      context_moveTabOptions: 'zen-tab-move-workspace',
+      context_sendTabToDevice: 'zen-tab-move-device',
+      context_reopenInContainer: 'zen-tab-move-container',
+    },
+  };
+
+  /**
+   * Creates the "Move Tab" submenu
+   */
+  function createMoveTabSubmenu() {
+    const contextMenu = document.getElementById('tabContextMenu');
+    if (!contextMenu) {
+      console.warn('[Tab Context Organizer] Tab context menu not found');
+      return null;
+    }
+
+    // Create submenu element
+    const submenu = document.createXULElement('menu');
+    submenu.id = CONFIG.SUBMENU_ID;
+    submenu.setAttribute('label', CONFIG.SUBMENU_LABEL);
+    submenu.setAttribute('class', 'zen-tab-move-submenu');
+
+    // Create menupopup container
+    const menupopup = document.createXULElement('menupopup');
+    submenu.appendChild(menupopup);
+
+    return { submenu, menupopup };
+  }
+
+  /**
+   * Moves existing menu items to the submenu
+   */
+  function reorganizeMenuItems() {
+    const contextMenu = document.getElementById('tabContextMenu');
+    if (!contextMenu) return;
+
+    const submenuData = createMoveTabSubmenu();
+    if (!submenuData) return;
+
+    const { submenu, menupopup } = submenuData;
+    let itemsFound = 0;
+
+    // Find and move target items
+    CONFIG.TARGET_ITEMS.forEach((itemId, index) => {
+      const item = document.getElementById(itemId);
+      if (item) {
+        // Clone the item to preserve functionality
+        const clonedItem = item.cloneNode(true);
+        clonedItem.id = `zen-${itemId}`;
+        clonedItem.setAttribute(
+          'class',
+          `${clonedItem.getAttribute('class') || ''} zen-tab-move-item ${CONFIG.CSS_CLASSES[itemId] || ''}`.trim()
+        );
+
+        // Update label if specified
+        if (CONFIG.LABELS[itemId]) {
+          clonedItem.setAttribute('label', CONFIG.LABELS[itemId]);
+        }
+
+        // Add to submenu
+        menupopup.appendChild(clonedItem);
+
+        // Add separator after workspace options
+        if (itemId === 'context_moveTabOptions' && index < CONFIG.TARGET_ITEMS.length - 1) {
+          const separator = document.createXULElement('menuseparator');
+          menupopup.appendChild(separator);
+        }
+
+        // Hide original item
+        item.style.display = 'none';
+        itemsFound++;
+      }
+    });
+
+    // Only add submenu if we found items to organize
+    if (itemsFound > 0) {
+      // Find a good position for the submenu (after separator before close tab)
+      const closeTabItem = document.getElementById('context_closeTab');
+      const referenceElement = closeTabItem?.previousElementSibling?.previousElementSibling;
+
+      if (referenceElement) {
+        contextMenu.insertBefore(submenu, referenceElement.nextSibling);
+      } else {
+        contextMenu.appendChild(submenu);
+      }
+
+      console.log(`[Tab Context Organizer] Reorganized ${itemsFound} menu items`);
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
+   * Initialize the mod when the DOM is ready
+   */
+  function init() {
+    // Wait for the browser to be fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+      return;
+    }
+
+    // Try to reorganize menu items
+    const success = reorganizeMenuItems();
+
+    if (success) {
+      console.log('[Tab Context Organizer] Successfully initialized');
+    } else {
+      // Retry after a delay if elements weren't ready
+      setTimeout(() => {
+        if (reorganizeMenuItems()) {
+          console.log('[Tab Context Organizer] Successfully initialized (delayed)');
+        } else {
+          console.warn('[Tab Context Organizer] Failed to initialize - menu items not found');
+        }
+      }, 1000);
+    }
+  }
+
+  /**
+   * Cleanup function for mod removal
+   */
+  function cleanup() {
+    const submenu = document.getElementById(CONFIG.SUBMENU_ID);
+    if (submenu) {
+      submenu.remove();
+    }
+
+    // Restore original items
+    CONFIG.TARGET_ITEMS.forEach((itemId) => {
+      const item = document.getElementById(itemId);
+      if (item) {
+        item.style.display = '';
+      }
+    });
+
+    console.log('[Tab Context Organizer] Cleanup completed');
+  }
+
+  // Expose cleanup function globally for debugging
+  window.zenTabContextOrganizerCleanup = cleanup;
+
+  // Initialize the mod
+  init();
+})();
