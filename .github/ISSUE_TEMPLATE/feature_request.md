@@ -1,49 +1,49 @@
 ---
 name: Feature Request
-about: Proposer une nouvelle fonctionnalité ou mod
+about: Propose a new feature or mod
 title: '[FEATURE] '
 labels: feature
 assignees: ''
 ---
 
-## 🎯 Résumé de la Fonctionnalité
+## 🎯 Feature Summary
 
-Une description courte et claire de la fonctionnalité souhaitée.
+A short and clear description of the desired feature.
 
 ## 💡 Motivation
 
-**Le problème est-il lié à une frustration ? Décrivez-la.**
-Une description claire de ce qui vous frustre. Ex. "Je suis toujours frustré quand [...]"
+**Is the problem related to a frustration? Describe it.**
+A clear description of what frustrates you. Ex. "I'm always frustrated when [...]"
 
-## 💭 Solution Proposée
+## 💭 Proposed Solution
 
-Une description claire et concise de ce que vous aimeriez qui se passe.
+A clear and concise description of what you would like to happen.
 
-## 🔄 Alternatives Considérées
+## 🔄 Considered Alternatives
 
-Une description claire de toutes les solutions alternatives que vous avez considérées.
+A clear description of all alternative solutions you have considered.
 
 ## 🎨 Mockups/Designs
 
-Si vous avez des idées de design ou des mockups, ajoutez-les ici.
+If you have design ideas or mockups, add them here.
 
-## 📋 Critères d'Acceptation
+## 📋 Acceptance Criteria
 
-- [ ] Fonctionnalité A
-- [ ] Fonctionnalité B
-- [ ] Tests passent
-- [ ] Documentation mise à jour
+- [ ] Feature A
+- [ ] Feature B
+- [ ] Tests pass
+- [ ] Documentation updated
 
-## 🏷️ Type de Mod
+## 🏷️ Mod Type
 
-- [ ] Nouveau mod complet
-- [ ] Amélioration d'un mod existant
-- [ ] Fonctionnalité pour plusieurs mods
+- [ ] Complete new mod
+- [ ] Enhancement to existing mod
+- [ ] Feature for multiple mods
 
-## 🎯 Mod(s) Concerné(s)
+## 🎯 Affected Mod(s)
 
-[Si c'est une amélioration] Quel(s) mod(s) seraient affectés ?
+[If it's an enhancement] Which mod(s) would be affected?
 
-## 📝 Contexte Supplémentaire
+## 📝 Additional Context
 
-Ajoutez tout autre contexte ou captures d'écran sur la demande de fonctionnalité ici.
+Add any other context or screenshots about the feature request here.

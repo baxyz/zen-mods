@@ -1,46 +1,46 @@
 ---
 name: Bug Report
-about: Signaler un problème avec un mod
+about: Report a problem with a mod
 title: '[BUG] '
 labels: bug
 assignees: ''
 ---
 
-## 🐛 Description du Bug
+## 🐛 Bug Description
 
-Une description claire et concise du problème.
+A clear and concise description of the problem.
 
-## 📋 Informations Système
+## 📋 System Information
 
-- **OS** : [ex. Windows 10, macOS, Ubuntu 20.04]
-- **Zen Browser** : [ex. 1.0.0-a.15]
-- **Mod(s) concerné(s)** : [ex. tab-context-organizer v1.0.0]
+- **OS**: [e.g. Windows 10, macOS, Ubuntu 20.04]
+- **Zen Browser**: [e.g. 1.0.0-a.15]
+- **Affected Mod(s)**: [e.g. tab-context-organizer v1.0.0]
 
-## 🔄 Étapes pour Reproduire
+## 🔄 Steps to Reproduce
 
-1. Aller à '...'
-2. Cliquer sur '....'
-3. Faire défiler vers '....'
-4. Voir l'erreur
+1. Go to '...'
+2. Click on '....'
+3. Scroll to '....'
+4. See error
 
-## ✅ Comportement Attendu
+## ✅ Expected Behavior
 
-Description claire de ce qui devrait se passer.
+Clear description of what should happen.
 
-## ❌ Comportement Actuel
+## ❌ Current Behavior
 
-Description de ce qui se passe actuellement.
+Description of what currently happens.
 
-## 📸 Captures d'écran
+## 📸 Screenshots
 
-Si applicable, ajoutez des captures d'écran pour expliquer votre problème.
+If applicable, add screenshots to explain your problem.
 
-## 🔧 Configuration Additionnelle
+## 🔧 Additional Configuration
 
-- Autres mods installés : [liste]
-- Extensions Zen : [liste]
-- Thème utilisé : [clair/sombre/personnalisé]
+- Other installed mods: [list]
+- Zen Extensions: [list]
+- Theme used: [light/dark/custom]
 
-## 📝 Contexte Supplémentaire
+## 📝 Additional Context
 
-Ajoutez tout autre contexte sur le problème ici.
+Add any other context about the problem here.

@@ -13,18 +13,43 @@
   "features": [
     "Groups tab movement options into 'Move Tab' submenu",
     "Includes: Move to start/end, Move to new window, Move to workspace",
-    "Includes: Send to device, Open in container"
+    "Includes: Send to device, Open in container",
+    "Customizable preferences for enabling/disabling features",
+    "User-configurable submenu label and options"
   ],
   "files": {
     "userChrome": "userChrome.css",
-    "userScript": "tabContextOrganizer.js"
+    "userScript": "tabContextOrganizer.js",
+    "preferences": "preferences.json"
+  },
+  "preferences": {
+    "enabled": true,
+    "configurable": [
+      "mod.tab_context_organizer.enabled",
+      "mod.tab_context_organizer.submenu_label",
+      "mod.tab_context_organizer.include_containers",
+      "mod.tab_context_organizer.include_devices",
+      "mod.tab_context_organizer.menu_position"
+    ]
   },
   "installation": {
     "instructions": [
       "Copy userChrome.css content to your chrome/userChrome.css file",
       "Copy userScript content to your chrome folder or use as userscript",
+      "Configure preferences in Zen Browser settings if desired",
       "Restart Zen browser"
     ]
   },
-  "tags": ["context-menu", "tabs", "ui", "organization"]
+  "tags": [
+    "context-menu",
+    "tabs",
+    "ui",
+    "organization",
+    "productivity"
+  ],
+  "marketplace": {
+    "submission_ready": true,
+    "screenshot": "screenshot.png",
+    "zen_store_compatible": true
+  }
 }

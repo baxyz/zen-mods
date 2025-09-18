@@ -14,9 +14,25 @@
     "rootDir": "./",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "types": ["node", "jest"]
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "node",
+      "jest"
+    ]
   },
-  "include": ["mods/**/*", "scripts/**/*", "*.ts"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
+  "include": [
+    "mods/**/*",
+    "scripts/**/*",
+    "*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
 }

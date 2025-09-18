@@ -1,130 +1,160 @@
-# Guide de Contribution 🤝
+# Contributing to Zen Mods
 
-Merci de votre intérêt pour contribuer à Zen Mods ! Ce guide vous aidera à comprendre comment participer efficacement au projet.
+Thank you for your interest in contributing to Zen Mods! This guide will help you get started and understand our development process.
 
-## 📋 Table des Matières
+## Table of Contents
 
-- [Code de Conduite](#code-de-conduite)
-- [Comment Contribuer](#comment-contribuer)
-- [Standards de Développement](#standards-de-développement)
-- [Processus de Review](#processus-de-review)
-- [Types de Contributions](#types-de-contributions)
+- [Development Environment](#development-environment)
+- [Project Structure](#project-structure)
+- [Adding a New Mod](#adding-a-new-mod)
+- [Coding Standards](#coding-standards)
+- [Testing](#testing)
+- [Pull Request Process](#pull-request-process)
+- [Deployment](#deployment)
 
-## 📜 Code de Conduite
+## Development Environment
 
-En participant à ce projet, vous acceptez de respecter notre code de conduite basé sur :
+### Prerequisites
 
-- **Respect** : Traiter tous les participants avec respect et courtoisie
-- **Inclusivité** : Créer un environnement accueillant pour tous
-- **Collaboration** : Travailler ensemble de manière constructive
-- **Qualité** : Maintenir des standards élevés de code et de documentation
+- **Node.js** ≥ 18.0.0
+- **npm** ≥ 9.0.0
+- **Git**
+- **Zen Browser** (for testing mods)
 
-## 🚀 Comment Contribuer
+### Installation
 
-### 1. Préparation
+1. Fork the repository
+2. Clone your fork:
+   ```bash
+   git clone https://github.com/your-username/zen-mods.git
+   cd zen-mods
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Install Git hooks:
+   ```bash
+   npx husky install
+   ```
+
+## 📜 Code of Conduct
+
+By participating in this project, you agree to respect our code of conduct based on:
+
+- **Respect**: Treat all participants with respect and courtesy
+- **Inclusivity**: Create a welcoming environment for everyone
+- **Collaboration**: Work together constructively
+- **Quality**: Maintain high standards of code and documentation
+
+## 🚀 How to Contribute
+
+### 1. Setup
 
 ```bash
-# Forker le projet sur GitHub
-# Puis cloner votre fork
-git clone https://github.com/VOTRE-USERNAME/zen-mods.git
+# Fork the project on GitHub
+# Then clone your fork
+git clone https://github.com/YOUR-USERNAME/zen-mods.git
 cd zen-mods
 
-# Ajouter le repository original comme remote
+# Add the original repository as upstream remote
 git remote add upstream https://github.com/username/zen-mods.git
 
-# Installer les dépendances
+# Install dependencies
 npm install
 ```
 
-### 2. Créer une Branche
+### 2. Create a Branch
 
 ```bash
-# Créer et basculer sur une nouvelle branche
-git checkout -b type/description-courte
+# Create and switch to a new branch
+git checkout -b type/short-description
 
-# Exemples :
+# Examples:
 git checkout -b feat/tab-grouping-mod
 git checkout -b fix/context-menu-icons
 git checkout -b docs/installation-guide
 ```
 
-### 3. Développement
+### 3. Development
 
-- Respecter la structure de projet existante
-- Suivre les conventions de nommage
-- Écrire du code lisible et bien commenté
-- Tester vos modifications
+- Respect the existing project structure
+- Follow naming conventions
+- Write readable and well-commented code
+- Test your changes
 
-### 4. Commit et Push
+### 4. Commit and Push
 
 ```bash
-# Ajouter les fichiers modifiés
+# Add modified files
 git add .
 
-# Commiter avec un message descriptif
-git commit -m "feat: ajouter mod de regroupement d'onglets"
+# Commit with a descriptive message
+git commit -m "feat: add tab grouping mod"
 
-# Pousser vers votre fork
+# Push to your fork
 git push origin feat/tab-grouping-mod
 ```
 
 ### 5. Pull Request
 
-1. Aller sur GitHub et créer une Pull Request
-2. Utiliser le template fourni
-3. Décrire clairement vos modifications
-4. Lier les issues concernées si applicable
+1. Go to GitHub and create a Pull Request
+2. Use the provided template
+3. Clearly describe your changes
+4. Link related issues if applicable
 
-## 📏 Standards de Développement
+## 📏 Development Standards
 
-### Convention de Commits
+### Commit Convention
 
-Utiliser la convention [Conventional Commits](https://www.conventionalcommits.org/) :
+Use the [Conventional Commits](https://www.conventionalcommits.org/) convention:
 
 ```
 type(scope): description
 
 type: feat, fix, docs, style, refactor, test, chore
-scope: nom du mod ou composant (optionnel)
+scope: mod or component name (optional)
 ```
 
-**Exemples** :
+**Examples**:
 
-- `feat(tab-organizer): ajouter support des containers`
-- `fix: corriger l'affichage des icônes en mode sombre`
-- `docs: mettre à jour le guide d'installation`
-- `style: améliorer le formatage du CSS`
+- `feat(tab-organizer): add container support`
+- `fix: correct icon display in dark mode`
+- `docs: update installation guide`
+- `style: improve CSS formatting`
 
-### Structure d'un Mod
+### Mod Structure
 
 ```
-mods/nom-du-mod/
-├── mod.json              # Métadonnées obligatoires
-├── userChrome.css        # Styles CSS
-├── script.js            # JavaScript (optionnel)
+mods/mod-name/
+├── mod.json              # Required metadata
+├── userChrome.css        # CSS styles
+├── script.js            # JavaScript (optional)
 ├── README.md            # Documentation
-├── assets/              # Ressources (images, etc.)
-└── tests/              # Tests (si applicable)
+├── assets/              # Resources (images, etc.)
+└── tests/              # Tests (if applicable)
 ```
 
 ### mod.json
 
-Structure obligatoire :
+Required structure:
 
 ```json
 {
-  "name": "nom-du-mod",
-  "displayName": "Nom Affiché",
+  "name": "mod-name",
+  "displayName": "Display Name",
   "version": "1.0.0",
-  "description": "Description courte du mod",
-  "author": "Votre Nom",
+  "description": "Short mod description",
+  "author": "Your Name",
   "license": "MIT",
   "type": "userChrome",
   "compatibility": {
     "zen": ">=1.0.0",
     "firefox": ">=115.0"
   },
-  "features": ["Liste des fonctionnalités"],
+  "features": ["List of features"],
   "tags": ["tag1", "tag2"]
 }
 ```
@@ -132,25 +162,24 @@ Structure obligatoire :
 ### CSS Guidelines
 
 ```css
-/* Utilisez des sélecteurs spécifiques pour éviter les conflits */
+/* Use specific selectors to avoid conflicts */
 #zenModSpecificSelector {
-  /* Vos styles */
+  /* Your styles */
 }
 
-/* Utilisez des variables CSS pour la cohérence */
+/* Use CSS variables for consistency */
 :root {
   --zen-mod-primary-color: #007acc;
   --zen-mod-secondary-color: #005a9e;
 }
 
-/* Support du mode sombre */
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   :root {
     --zen-mod-primary-color: #4da6ff;
-  }
 }
 
-/* Commentaires pour expliquer les sections complexes */
+/* Comments to explain complex sections */
 /* ========================================
    Section Title
    ======================================== */
@@ -159,114 +188,114 @@ Structure obligatoire :
 ### JavaScript Guidelines
 
 ```javascript
-// Utiliser un IIFE pour éviter la pollution globale
+// Use IIFE to avoid global pollution
 (() => {
   'use strict';
 
-  // Configuration au début
+  // Configuration at the beginning
   const CONFIG = {
-    MOD_NAME: 'mon-mod',
+    MOD_NAME: 'my-mod',
     VERSION: '1.0.0',
   };
 
-  // Documentation des fonctions
+  // Function documentation
   /**
-   * Description de la fonction
-   * @param {string} param - Description du paramètre
-   * @returns {boolean} Description du retour
+   * Function description
+   * @param {string} param - Parameter description
+   * @returns {boolean} Return description
    */
-  function maFonction(param) {
-    // Implémentation
+  function myFunction(param) {
+    // Implementation
   }
 
-  // Gestion d'erreurs
+  // Error handling
   try {
-    // Code principal
+    // Main code
   } catch (error) {
-    console.error(`[${CONFIG.MOD_NAME}] Erreur:`, error);
+    console.error(`[${CONFIG.MOD_NAME}] Error:`, error);
   }
 })();
 ```
 
-## 🔍 Processus de Review
+## 🔍 Review Process
 
-### Critères de Review
+### Review Criteria
 
-1. **Fonctionnalité** : Le code fait-il ce qu'il est censé faire ?
-2. **Qualité** : Le code est-il lisible et maintenable ?
-3. **Performance** : Y a-t-il un impact négatif sur les performances ?
-4. **Compatibilité** : Fonctionne-t-il avec différentes versions ?
-5. **Documentation** : La documentation est-elle complète et claire ?
+1. **Functionality**: Does the code do what it's supposed to do?
+2. **Quality**: Is the code readable and maintainable?
+3. **Performance**: Is there a negative impact on performance?
+4. **Compatibility**: Does it work with different versions?
+5. **Documentation**: Is the documentation complete and clear?
 
-### Checklist avant Soumission
+### Pre-submission Checklist
 
-- [ ] Le code suit les standards du projet
-- [ ] Tous les tests passent (`npm test`)
-- [ ] Le linting passe (`npm run lint`)
-- [ ] Le formatage est correct (`npm run format:check`)
-- [ ] La documentation est à jour
-- [ ] Le mod a été testé dans Zen
-- [ ] Les captures d'écran sont incluses si pertinentes
+- [ ] Code follows project standards
+- [ ] All tests pass (`npm test`)
+- [ ] Linting passes (`npm run lint`)
+- [ ] Formatting is correct (`npm run format:check`)
+- [ ] Documentation is up to date
+- [ ] Mod has been tested in Zen
+- [ ] Screenshots are included if relevant
 
-## 🎯 Types de Contributions
+## 🎯 Types of Contributions
 
-### 🆕 Nouveaux Mods
+### 🆕 New Mods
 
-1. **Proposer** d'abord une issue pour discuter de l'idée
-2. **Vérifier** qu'un mod similaire n'existe pas déjà
-3. **Développer** selon les standards du projet
-4. **Tester** soigneusement
-5. **Documenter** complètement
+1. **Propose** an issue first to discuss the idea
+2. **Check** that a similar mod doesn't already exist
+3. **Develop** according to project standards
+4. **Test** thoroughly
+5. **Document** completely
 
-### 🐛 Corrections de Bugs
+### 🐛 Bug Fixes
 
-1. **Créer** une issue décrivant le bug si elle n'existe pas
-2. **Reproduire** le problème
-3. **Corriger** en minimisant les changements
-4. **Tester** la correction
-5. **Mettre à jour** les tests si nécessaire
+1. **Create** an issue describing the bug if it doesn't exist
+2. **Reproduce** the problem
+3. **Fix** while minimizing changes
+4. **Test** the correction
+5. **Update** tests if necessary
 
-### 📚 Améliorations de Documentation
+### 📚 Documentation Improvements
 
-1. **Identifier** les sections à améliorer
-2. **Écrire** de manière claire et concise
-3. **Inclure** des exemples quand approprié
-4. **Vérifier** l'orthographe et la grammaire
+1. **Identify** sections to improve
+2. **Write** clearly and concisely
+3. **Include** examples when appropriate
+4. **Check** spelling and grammar
 
-### 🎨 Améliorations UI/UX
+### 🎨 UI/UX Improvements
 
-1. **Documenter** le problème d'expérience utilisateur
-2. **Proposer** une solution avec maquettes si possible
-3. **Implémenter** de manière responsive
-4. **Tester** sur différentes configurations
+1. **Document** the user experience problem
+2. **Propose** a solution with mockups if possible
+3. **Implement** responsively
+4. **Test** on different configurations
 
-## 🏷️ Labels et Issues
+## 🏷️ Labels and Issues
 
-### Types d'Issues
+### Issue Types
 
-- `bug` : Problème à corriger
-- `feature` : Nouvelle fonctionnalité
-- `enhancement` : Amélioration d'existant
-- `documentation` : Liée à la documentation
-- `good first issue` : Bon pour débuter
-- `help wanted` : Aide recherchée
+- `bug`: Problem to fix
+- `feature`: New functionality
+- `enhancement`: Improvement of existing
+- `documentation`: Related to documentation
+- `good first issue`: Good for beginners
+- `help wanted`: Help sought
 
-### Priorités
+### Priorities
 
-- `priority: high` : Urgent
-- `priority: medium` : Important
-- `priority: low` : Peut attendre
+- `priority: high`: Urgent
+- `priority: medium`: Important
+- `priority: low`: Can wait
 
-## 🆘 Besoin d'Aide ?
+## 🆘 Need Help?
 
-- **Issues** : Pour signaler bugs et proposer fonctionnalités
-- **Discussions** : Pour questions générales et idées
-- **Discord/Chat** : (si configuré) Pour aide en temps réel
+- **Issues**: To report bugs and propose features
+- **Discussions**: For general questions and ideas
+- **Discord/Chat**: (if configured) For real-time help
 
-## 🎉 Remerciements
+## 🎉 Acknowledgments
 
-Votre contribution est précieuse ! Tous les contributeurs sont reconnus dans notre section remerciements.
+Your contribution is valuable! All contributors are recognized in our acknowledgments section.
 
 ---
 
-**Merci de rendre Zen Browser encore meilleur ! 🚀**
+**Thank you for making Zen Browser even better! 🚀**

@@ -1,121 +1,143 @@
 # Tab Context Menu Organizer
 
-Un mod pour le navigateur Zen qui réorganise le menu contextuel des onglets en regroupant toutes les options de déplacement d'onglets dans un sous-menu dédié.
+A mod for Zen browser that reorganizes the tab context menu by grouping all tab movement options into a dedicated submenu.
 
-## Fonctionnalités
+## Features
 
-### 🎯 Organisation du Menu
+### 🎯 Menu Organization
 
-- **Regroupe** toutes les options de déplacement d'onglets dans un sous-menu "Move Tab"
-- **Simplifie** l'interface en réduisant le nombre d'éléments visibles
-- **Préserve** toutes les fonctionnalités existantes
+- **Groups** all tab movement options into a "Move Tab" submenu
+- **Simplifies** the interface by reducing the number of visible elements
+- **Preserves** all existing functionality
+- **Customizable** via Zen preferences
 
-### 📋 Options Regroupées
+### 📋 Grouped Options
 
-Le sous-menu "Move Tab" contient :
+The "Move Tab" submenu contains:
 
-- **Déplacement de position** :
-  - Déplacer au début
-  - Déplacer à la fin
-- **Déplacement vers une nouvelle fenêtre**
-- **Déplacement vers un espace de travail**
-- **Envoi vers un autre appareil**
-- **Ouverture dans un conteneur d'onglets**
+- **Position movement**:
+  - Move to beginning
+  - Move to end
+- **Move to new window**
+- **Move to workspace**
+- **Send to device** (configurable)
+- **Open in tab container** (configurable)
+
+### ⚙️ Configurable Preferences
+
+- **Enable/Disable mod**: General mod control
+- **Submenu label**: Customize the displayed name (e.g., "Move Tab", "Organize", etc.)
+- **Include containers**: Show/hide container options
+- **Include device sending**: Show/hide sending to other devices
+- **Menu position**: Control where to place the submenu
 
 ## Installation
 
-### Méthode 1 : CSS uniquement (Recommandée)
+### Method 1: CSS only (Recommended)
 
-1. Localisez votre dossier de profil Zen
-2. Naviguez vers le dossier `chrome/` (créez-le s'il n'existe pas)
-3. Copiez le contenu de `userChrome.css` dans votre fichier `userChrome.css`
-4. Redémarrez Zen
+1. Locate your Zen profile folder
+2. Navigate to the `chrome/` folder (create it if it doesn't exist)
+3. Copy the content of `userChrome.css` into your `userChrome.css` file
+4. Restart Zen
 
-### Méthode 2 : Avec JavaScript (Fonctionnalités avancées)
+### Method 2: With JavaScript (Advanced features)
 
-1. Suivez les étapes de la méthode 1 pour le CSS
-2. Copiez `tabContextOrganizer.js` dans votre dossier `chrome/`
-3. Ajoutez le script en tant qu'userscript ou référencez-le dans votre configuration
-4. Redémarrez Zen
+1. Follow method 1 steps for CSS
+2. Copy `tabContextOrganizer.js` into your `chrome/` folder
+3. Add the script as a userscript or reference it in your configuration
+4. Restart Zen
 
-## Structure des Fichiers
+## File Structure
 
 ```
 tab-context-organizer/
-├── mod.json                 # Métadonnées du mod
-├── userChrome.css          # Styles CSS pour la réorganisation
-├── tabContextOrganizer.js  # Script JavaScript (optionnel)
-└── README.md               # Ce fichier
+├── mod.json                    # Mod metadata
+├── userChrome.css             # CSS styles for reorganization
+├── tabContextOrganizer.js     # JavaScript script (optional)
+├── preferences.json           # Preferences configuration
+└── README.md                  # This file
 ```
 
 ## Configuration
 
-### Personnalisation CSS
+### Preferences
 
-Vous pouvez personnaliser l'apparence en modifiant les variables CSS :
+The mod supports several preferences to customize the behavior:
+
+#### Via Zen Browser Interface (Method 1)
+1. Open Zen preferences
+2. Go to "Mods" section
+3. Find "Tab Context Organizer" 
+4. Adjust the available options
+
+#### Via about:config (Method 2)
+Access `about:config` and modify:
+
+- `zen.tabs.context.organizer.groupMovement`: Enable/disable movement options grouping (default: true)
+- `zen.tabs.context.organizer.showSeparators`: Display separators between groups (default: true)  
+- `zen.tabs.context.organizer.compactMode`: Use compact display mode (default: false)
+
+### Customization
+
+You can modify the CSS to adjust visual appearance:
 
 ```css
-#tabContextMenu {
-  --zen-tab-move-submenu-icon: url('votre-icone.svg');
+/* Modify separator color */
+.tabContextOrganizer-separator {
+  border-color: your-color !important;
+}
+
+/* Adjust grouping margins */  
+.tabContextOrganizer-group {
+  margin: your-margin !important;
 }
 ```
 
-### Options JavaScript
+## Compatibility
 
-Le script inclut une configuration modifiable :
+- **Zen Browser**: ≥ 1.0.0
+- **Firefox**: ≥ 115.0 (Zen base)
+- **Themes**: Compatible with dark and light themes
 
-```javascript
-const CONFIG = {
-  SUBMENU_LABEL: 'Move Tab', // Libellé du sous-menu
-  // ... autres options
-};
-```
+## Troubleshooting
 
-## Compatibilité
+### Submenu doesn't appear
 
-- **Zen Browser** : ≥ 1.0.0
-- **Firefox** : ≥ 115.0 (base de Zen)
-- **Thèmes** : Compatible avec les thèmes sombres et clairs
+1. Verify that `userChrome.css` is enabled in Zen
+2. Confirm the file is in the correct `chrome/` folder
+3. Completely restart Zen
 
-## Résolution de Problèmes
+### Some options are missing
 
-### Le sous-menu n'apparaît pas
+1. Verify that all extensions are up to date
+2. Some options may not be available depending on your configuration
 
-1. Vérifiez que `userChrome.css` est activé dans Zen
-2. Confirmez que le fichier est dans le bon dossier `chrome/`
-3. Redémarrez complètement Zen
+### Conflict with other mods
 
-### Certaines options manquent
+1. Load this mod last
+2. Check CSS selectors for conflicts
+3. Use the `zenTabContextOrganizerCleanup()` function to temporarily disable
 
-1. Vérifiez que toutes les extensions sont à jour
-2. Certaines options peuvent ne pas être disponibles selon votre configuration
+## Development
 
-### Conflit avec d'autres mods
+### Code Structure
 
-1. Chargez ce mod en dernier
-2. Vérifiez les sélecteurs CSS pour les conflits
-3. Utilisez la fonction `zenTabContextOrganizerCleanup()` pour désactiver temporairement
+- **CSS**: Styles to hide original elements and style the submenu
+- **JavaScript**: Logic to dynamically create the submenu and move elements
 
-## Développement
+### Testing
 
-### Structure du Code
+To test the mod:
 
-- **CSS** : Styles pour masquer les éléments originaux et styliser le sous-menu
-- **JavaScript** : Logique pour créer dynamiquement le sous-menu et déplacer les éléments
+1. Open multiple tabs
+2. Right-click on a tab
+3. Verify the presence of the "Move Tab" submenu
+4. Test each submenu option
 
-### Tests
+## Contributing
 
-Pour tester le mod :
+Contributions are welcome! See the main project's contribution guide.
 
-1. Ouvrez plusieurs onglets
-2. Faites un clic droit sur un onglet
-3. Vérifiez la présence du sous-menu "Move Tab"
-4. Testez chaque option du sous-menu
+## License
 
-## Contribution
-
-Les contributions sont les bienvenues ! Consultez le guide de contribution principal du projet.
-
-## Licence
-
-MIT - Voir le fichier LICENSE du projet principal.
+MIT - See the main project's LICENSE file.

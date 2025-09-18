@@ -17,7 +17,7 @@
    */
   const CONFIG = {
     SUBMENU_ID: 'zen-tab-move-submenu',
-    SUBMENU_LABEL: 'Move Tab',
+    DEFAULT_SUBMENU_LABEL: 'Move Tab',
     TARGET_ITEMS: [
       'context_moveToStart',
       'context_moveToEnd',
@@ -45,9 +45,73 @@
   };
 
   /**
+   * Get preference value from browser preferences
+   */
+  function getPreference(name, defaultValue) {
+    try {
+      const prefService = Components.classes["@mozilla.org/preferences-service;1"]
+        .getService(Components.interfaces.nsIPrefBranch);
+
+      switch (typeof defaultValue) {
+        case 'boolean':
+          return prefService.getBoolPref(name, defaultValue);
+        case 'string':
+          return prefService.getCharPref(name, defaultValue);
+        case 'number':
+          return prefService.getIntPref(name, defaultValue);
+        default:
+          return defaultValue;
+      }
+    } catch (e) {
+      console.warn(`[Tab Context Organizer] Could not get preference ${name}:`, e);
+      return defaultValue;
+    }
+  }
+
+  /**
+   * Check if mod is enabled via preferences
+   */
+  function isModEnabled() {
+    return getPreference('mod.tab_context_organizer.enabled', true);
+  }
+
+  /**
+   * Get custom submenu label from preferences
+   */
+  function getSubmenuLabel() {
+    return getPreference('mod.tab_context_organizer.submenu_label', CONFIG.DEFAULT_SUBMENU_LABEL);
+  }
+
+  /**
+   * Check if containers should be included
+   */
+  function shouldIncludeContainers() {
+    return getPreference('mod.tab_context_organizer.include_containers', true);
+  }
+
+  /**
+   * Check if device options should be included
+   */
+  function shouldIncludeDevices() {
+    return getPreference('mod.tab_context_organizer.include_devices', true);
+  }
+
+  /**
+   * Get menu position preference
+   */
+  function getMenuPosition() {
+    return getPreference('mod.tab_context_organizer.menu_position', 'auto');
+  }
+
+  /**
    * Creates the "Move Tab" submenu
    */
   function createMoveTabSubmenu() {
+    // Check if mod is enabled first
+    if (!isModEnabled()) {
+      return null;
+    }
+
     const contextMenu = document.getElementById('tabContextMenu');
     if (!contextMenu) {
       console.warn('[Tab Context Organizer] Tab context menu not found');
@@ -57,7 +121,7 @@
     // Create submenu element
     const submenu = document.createXULElement('menu');
     submenu.id = CONFIG.SUBMENU_ID;
-    submenu.setAttribute('label', CONFIG.SUBMENU_LABEL);
+    submenu.setAttribute('label', getSubmenuLabel());
     submenu.setAttribute('class', 'zen-tab-move-submenu');
 
     // Create menupopup container
@@ -84,6 +148,16 @@
     CONFIG.TARGET_ITEMS.forEach((itemId, index) => {
       const item = document.getElementById(itemId);
       if (item) {
+        // Skip containers if disabled in preferences
+        if (itemId === 'context_reopenInContainer' && !shouldIncludeContainers()) {
+          return;
+        }
+
+        // Skip device options if disabled in preferences
+        if (itemId === 'context_sendTabToDevice' && !shouldIncludeDevices()) {
+          return;
+        }
+
         // Clone the item to preserve functionality
         const clonedItem = item.cloneNode(true);
         clonedItem.id = `zen-${itemId}`;
