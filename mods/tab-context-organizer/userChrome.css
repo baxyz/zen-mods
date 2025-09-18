@@ -1,6 +1,12 @@
-/* ==========================================================================
-   Tab Context Menu Organizer for Zen Browser
-   ========================================================================== */
+/**
+ * This file is part of Tab Context Menu Organizer.
+ * Copyright (C) 2025 baxyz
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/* ========================================================================== 
+  Tab Context Menu Organizer for Zen Browser
+  ========================================================================== */
 
 /* Only apply styles when the mod is enabled */
 @media (-moz-bool-pref: "mod.tab_context_organizer.enabled") {

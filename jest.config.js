@@ -1,3 +1,9 @@
+/**
+ * This file is part of Zen Mods.
+ * Copyright (C) 2025 baxyz
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',

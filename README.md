@@ -4,7 +4,7 @@ A collection of mods for Zen browser aimed at enhancing user experience by custo
 
 [![CI/CD](https://github.com/baxyz/zen-mods/workflows/CI/CD/badge.svg)](https://github.com/baxyz/zen-mods/actions)
 [![Code Quality](https://github.com/baxyz/zen-mods/workflows/Code%20Quality/badge.svg)](https://github.com/baxyz/zen-mods/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
 
 ## 📋 Table of Contents
 

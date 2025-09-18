@@ -30,7 +30,7 @@
     "browser-ui"
   ],
   "author": "Berenger",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/baxyz/zen-mods/issues"
   },

@@ -3,8 +3,8 @@
   "displayName": "Tab Context Menu Organizer",
   "version": "1.0.0",
   "description": "Reorganizes tab context menu by grouping related tab movement options into submenus",
-  "author": "Berenger",
-  "license": "MIT",
+  "author": "baxyz",
+  "license": "AGPL-3.0-or-later",
   "type": "userChrome",
   "compatibility": {
     "zen": ">=1.0.0",

@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
+/**
+ * This file is part of Zen Mods.
+ * Copyright (C) 2025 baxyz
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
 import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
