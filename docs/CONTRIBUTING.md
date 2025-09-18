@@ -26,7 +26,7 @@ Thank you for your interest in contributing to Zen Mods! This guide will help yo
 1. Fork the repository
 2. Clone your fork:
    ```bash
-   git clone https://github.com/your-username/zen-mods.git
+   git clone https://github.com/baxyz/zen-mods.git
    cd zen-mods
    ```
 
@@ -56,11 +56,11 @@ By participating in this project, you agree to respect our code of conduct based
 ```bash
 # Fork the project on GitHub
 # Then clone your fork
-git clone https://github.com/YOUR-USERNAME/zen-mods.git
+git clone https://github.com/baxyz/zen-mods.git
 cd zen-mods
 
 # Add the original repository as upstream remote
-git remote add upstream https://github.com/username/zen-mods.git
+git remote add upstream https://github.com/baxyz/zen-mods.git
 
 # Install dependencies
 npm install

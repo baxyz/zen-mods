@@ -75,7 +75,7 @@ License: MIT
 
 #### Links and Files
 ```yaml
-Repository: https://github.com/username/zen-mods
+Repository: https://github.com/baxyz/zen-mods
 Mod Path: /mods/tab-context-organizer/
 Screenshot: [Attach screenshot.png file]
 README: [Copy README.md content]

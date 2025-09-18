@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/username/zen-mods.git"
+    "url": "git+https://github.com/baxyz/zen-mods.git"
   },
   "keywords": [
     "zen-browser",
@@ -32,9 +32,9 @@
   "author": "Berenger",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/username/zen-mods/issues"
+    "url": "https://github.com/baxyz/zen-mods/issues"
   },
-  "homepage": "https://github.com/username/zen-mods#readme",
+  "homepage": "https://github.com/baxyz/zen-mods#readme",
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/jest": "^29.0.0",

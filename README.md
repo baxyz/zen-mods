@@ -2,8 +2,8 @@
 
 A collection of mods for Zen browser aimed at enhancing user experience by customizing and simplifying the interface.
 
-[![CI/CD](https://github.com/username/zen-mods/workflows/CI/CD/badge.svg)](https://github.com/username/zen-mods/actions)
-[![Code Quality](https://github.com/username/zen-mods/workflows/Code%20Quality/badge.svg)](https://github.com/username/zen-mods/actions)
+[![CI/CD](https://github.com/baxyz/zen-mods/workflows/CI/CD/badge.svg)](https://github.com/baxyz/zen-mods/actions)
+[![Code Quality](https://github.com/baxyz/zen-mods/workflows/Code%20Quality/badge.svg)](https://github.com/baxyz/zen-mods/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 📋 Table of Contents
@@ -52,7 +52,7 @@ _More mods will be added soon..._
 
 ### Quick Installation
 
-1. **Download** the latest release from the [releases page](https://github.com/username/zen-mods/releases)
+1. **Download** the latest release from the [releases page](https://github.com/baxyz/zen-mods/releases)
 2. **Extract** the archive
 3. **Choose** the mods you want to install
 4. **Follow** the specific instructions for each mod
@@ -61,7 +61,7 @@ _More mods will be added soon..._
 
 ```bash
 # Clone the repository
-git clone https://github.com/username/zen-mods.git
+git clone https://github.com/baxyz/zen-mods.git
 cd zen-mods
 
 # Install dependencies
@@ -106,7 +106,7 @@ For the mods to work, you need to:
 
 ```bash
 # Clone and install
-git clone https://github.com/username/zen-mods.git
+git clone https://github.com/baxyz/zen-mods.git
 cd zen-mods
 npm install
 
@@ -194,8 +194,8 @@ This project is under MIT license. See the [LICENSE](LICENSE) file for more deta
 
 ## 🆘 Support
 
-- **Issues**: [Open an issue](https://github.com/username/zen-mods/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/username/zen-mods/discussions)
+- **Issues**: [Open an issue](https://github.com/baxyz/zen-mods/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/baxyz/zen-mods/discussions)
 - **Email**: support@zen-mods.dev (if configured)
 
 ## 🙏 Acknowledgments
