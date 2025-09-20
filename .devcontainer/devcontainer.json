@@ -45,7 +45,9 @@
         // License Header Management
         "psioniq.psi-header",
         // Language Pack (French)
-        "MS-CEINTL.vscode-language-pack-fr"
+        "MS-CEINTL.vscode-language-pack-fr",
+        // File support
+        "adamraichu.zip-viewer"
       ],
       "settings": {
         "typescript.preferences.useAliasesForRenames": false,
