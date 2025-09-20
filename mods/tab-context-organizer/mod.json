@@ -2,53 +2,44 @@
   "name": "tab-context-organizer",
   "displayName": "Tab Context Menu Organizer",
   "version": "1.0.0",
-  "description": "Reorganizes tab context menu by grouping related tab movement options into submenus",
+  "description": "Simple tab context menu organizer that lets you show/hide different sections based on your preferences",
   "author": "baxyz",
   "license": "AGPL-3.0-or-later",
-  "type": "userChrome",
   "compatibility": {
-    "zen": ">=1.0.0",
-    "firefox": ">=115.0"
+    "zen": ">=1.15.0"
   },
   "features": [
-    "Groups tab movement options into 'Move Tab' submenu",
-    "Includes: Move to start/end, Move to new window, Move to workspace",
-    "Includes: Send to device, Open in container",
-    "Customizable preferences for enabling/disabling features",
-    "User-configurable submenu label and options"
+    "Simple preference-based organization of tab context menu",
+    "Show/hide tab movement options (move to start/end, move to new window)",
+    "Show/hide workspace movement options",
+    "Show/hide device sync options",
+    "Show/hide container options",
+    "Optional visual separators between sections"
   ],
   "files": {
-    "userChrome": "userChrome.css",
-    "userScript": "tabContextOrganizer.js",
+    "userChrome": "style.css",
     "preferences": "preferences.json"
   },
   "preferences": {
     "enabled": true,
     "configurable": [
       "mod.tab_context_organizer.enabled",
-      "mod.tab_context_organizer.include_workspace",
-      "mod.tab_context_organizer.include_device",
-      "mod.tab_context_organizer.include_container"
-    ]
-  },
-  "installation": {
-    "instructions": [
-      "Copy userChrome.css content to your chrome/userChrome.css file",
-      "Copy userScript content to your chrome folder or use as userscript",
-      "Configure preferences in Zen Browser settings if desired",
-      "Restart Zen browser"
+      "mod.tab_context_organizer.show_tab_movement",
+      "mod.tab_context_organizer.show_workspace",
+      "mod.tab_context_organizer.show_device",
+      "mod.tab_context_organizer.show_container",
+      "mod.tab_context_organizer.show_separators"
     ]
   },
   "tags": [
     "context-menu",
     "tabs",
-    "ui",
-    "organization",
-    "productivity"
+    "organization"
   ],
   "marketplace": {
     "submission_ready": true,
     "screenshot": "screenshot.png",
-    "zen_store_compatible": true
+    "zen_store_compatible": true,
+    "css_only": true
   }
 }

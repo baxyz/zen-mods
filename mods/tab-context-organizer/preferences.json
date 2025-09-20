@@ -1,26 +1,49 @@
 [
   {
     "property": "mod.tab_context_organizer.enabled",
-    "label": "Enable Tab Context Organizer",
+    "label": "Enable Tab Context Menu Organizer",
+    "description": "Enable or disable the tab context menu organization features",
     "type": "checkbox",
     "defaultValue": true
   },
   {
-    "property": "mod.tab_context_organizer.include_workspace",
-    "label": "Include Move to Another Workspace",
+    "property": "mod.tab_context_organizer.show_tab_movement",
+    "label": "Show Tab Movement Options",
+    "description": "Show options to move tabs (Move to start, Move to end, Move to new window)",
     "type": "checkbox",
-    "defaultValue": true
+    "defaultValue": true,
+    "dependency": "mod.tab_context_organizer.enabled"
   },
   {
-    "property": "mod.tab_context_organizer.include_device",
-    "label": "Include Send to Another Device",
+    "property": "mod.tab_context_organizer.show_workspace",
+    "label": "Show Workspace Options",
+    "description": "Show options to move tabs to different workspaces",
     "type": "checkbox",
-    "defaultValue": true
+    "defaultValue": true,
+    "dependency": "mod.tab_context_organizer.enabled"
   },
   {
-    "property": "mod.tab_context_organizer.include_container",
-    "label": "Include Open in Another Container",
+    "property": "mod.tab_context_organizer.show_device",
+    "label": "Show Device Sync Options",
+    "description": "Show options to send tabs to other devices",
     "type": "checkbox",
-    "defaultValue": true
+    "defaultValue": true,
+    "dependency": "mod.tab_context_organizer.enabled"
+  },
+  {
+    "property": "mod.tab_context_organizer.show_container",
+    "label": "Show Container Options",
+    "description": "Show options to open tabs in different containers",
+    "type": "checkbox",
+    "defaultValue": true,
+    "dependency": "mod.tab_context_organizer.enabled"
+  },
+  {
+    "property": "mod.tab_context_organizer.show_separators",
+    "label": "Show Visual Separators",
+    "description": "Add visual separators between different sections of the context menu",
+    "type": "checkbox",
+    "defaultValue": false,
+    "dependency": "mod.tab_context_organizer.enabled"
   }
 ]
