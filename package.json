@@ -22,8 +22,5 @@
   "bugs": {
     "url": "https://github.com/baxyz/zen-mods/issues"
   },
-  "homepage": "https://github.com/baxyz/zen-mods#readme",
-  "dependencies": {
-    "archiver": "^7.0.1"
-  }
+  "homepage": "https://github.com/baxyz/zen-mods#readme"
 }
