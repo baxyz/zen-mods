@@ -2,8 +2,6 @@
 
 A collection of mods for Zen browser aimed at enhancing user experience by customizing and simplifying the interface.
 
-[![CI/CD](https://github.com/baxyz/zen-mods/workflows/CI/CD/badge.svg)](https://github.com/baxyz/zen-mods/actions)
-[![Code Quality](https://github.com/baxyz/zen-mods/workflows/Code%20Quality/badge.svg)](https://github.com/baxyz/zen-mods/actions)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
 
 ## 📋 Table of Contents
@@ -98,23 +96,17 @@ For the mods to work, you need to:
 
 ### Prerequisites
 
-- Node.js ≥ 18.0.0
-- npm ≥ 9.0.0
-- Git
+- Node LTS
 
-### Environment Setup
 
 ```bash
 # Clone and install
 git clone https://github.com/baxyz/zen-mods.git
 cd zen-mods
-npm install
+pnpm install
 
-# Install Git hooks
-npm run prepare
-
-# Run in development mode
-npm run dev
+# Run build
+pnpm run build
 ```
 
 ### Project Structure
