@@ -2,11 +2,10 @@
   "name": "zen-mods",
   "version": "1.0.0",
   "description": "Collection of mods for Zen browser to enhance user experience",
-  "main": "index.js",
   "type": "module",
+  "private": true,
   "scripts": {
-    "build": "node scripts/build-all.js",
-    "dev": "node scripts/build-all.js --watch"
+    "build": "node scripts/build-all.js"
   },
   "repository": {
     "type": "git",
@@ -14,12 +13,9 @@
   },
   "keywords": [
     "zen-browser",
-    "browser-extension",
-    "userscript",
+    "zen-mods",
     "mod",
-    "customization",
-    "firefox",
-    "browser-ui"
+    "customization"
   ],
   "author": "baxyz",
   "license": "AGPL-3.0-or-later",
@@ -27,5 +23,7 @@
     "url": "https://github.com/baxyz/zen-mods/issues"
   },
   "homepage": "https://github.com/baxyz/zen-mods#readme",
-  "packageManager": "pnpm@10.17.0"
+  "dependencies": {
+    "archiver": "^7.0.1"
+  }
 }
