@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * This file is part of Zen Mods.
+ * This file is part of baxyz's zen mods.
  * Copyright (C) 2025 baxyz
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */

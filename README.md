@@ -98,6 +98,24 @@ For the mods to work, you need to:
 
 - Node LTS
 
+### Development Container (Recommended)
+
+This project includes a pre-configured development container with all necessary tools:
+
+- Microsoft TypeScript-Node base image
+- pnpm package manager
+- Pre-configured VS Code extensions
+- Git and SSH integration
+
+**Quick Start with Dev Container**:
+1. Open the project in VS Code
+2. Install the "Dev Containers" extension
+3. Click "Reopen in Container" when prompted
+4. Everything will be set up automatically!
+
+[📖 Dev Container Documentation](./.devcontainer/README.md)
+
+### Manual Environment Setup
 
 ```bash
 # Clone and install
