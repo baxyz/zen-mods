@@ -1,6 +1,6 @@
 # Zen Mods 🚀
 
-A collection of mods for Zen browser aimed at enhancing user experience by customizing and simplifying the interface.
+A collection of mods for Zen Browser aimed at enhancing user experience by customizing and simplifying the interface.
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
 
@@ -15,7 +15,7 @@ A collection of mods for Zen browser aimed at enhancing user experience by custo
 
 ## 🎯 Overview
 
-This project contains a collection of carefully designed mods for Zen browser. Each mod is developed to solve specific usability issues while maintaining compatibility and performance.
+This project contains a collection of carefully designed mods for Zen Browser. Each mod is developed to solve specific usability issues while maintaining compatibility and performance.
 
 ### Key Features
 
@@ -29,15 +29,17 @@ This project contains a collection of carefully designed mods for Zen browser. E
 
 ### 1. Tab Context Menu Organizer
 
-**Version**: 1.0.0 | **Status**: ✅ Stable
+**Version**: 1.1.0 | **Status**: ✅ Stable
 
-Reorganizes the tab context menu by grouping all tab movement options into a dedicated submenu.
+Organizes the tab context menu by allowing you to show/hide different sections based on your preferences.
 
 **Features**:
 
-- Groups tab movement options (start, end, new window)
-- Includes workspace and container options
-- Integrates sending to other devices
+- Control visibility of tab movement options
+- Manage workspace options
+- Configure device sync options
+- Control container options
+- Optional visual separators
 - Cleaner and more organized interface
 
 [📖 Detailed Documentation](./mods/tab-context-organizer/README.md)
@@ -85,7 +87,8 @@ For the mods to work, you need to:
    - Click "Open Folder" next to "Profile Folder"
 
 3. **Create the chrome folder** (if it doesn't exist):
-   ```
+
+   ```text
    profile-folder/
    └── chrome/
        ├── userChrome.css
@@ -103,11 +106,12 @@ For the mods to work, you need to:
 This project includes a pre-configured development container with all necessary tools:
 
 - Microsoft TypeScript-Node base image
-- pnpm package manager
+- npm package manager
 - Pre-configured VS Code extensions
 - Git and SSH integration
 
 **Quick Start with Dev Container**:
+
 1. Open the project in VS Code
 2. Install the "Dev Containers" extension
 3. Click "Reopen in Container" when prompted
@@ -121,20 +125,20 @@ This project includes a pre-configured development container with all necessary 
 # Clone and install
 git clone https://github.com/baxyz/zen-mods.git
 cd zen-mods
-pnpm install
+npm install
 
 # Run build
-pnpm run build
+npm run build
 ```
 
 ### Project Structure
 
-```
+```text
 zen-mods/
 ├── mods/                    # Mods folder
 │   └── mod-name/
 │       ├── mod.json        # Mod metadata
-│       ├── userChrome.css  # CSS styles
+│       ├── style.css       # CSS styles
 │       ├── script.js       # JavaScript (optional)
 │       └── README.md       # Documentation
 ├── scripts/                # Build scripts
@@ -206,7 +210,7 @@ This project is under MIT license. See the [LICENSE](LICENSE) file for more deta
 
 - **Issues**: [Open an issue](https://github.com/baxyz/zen-mods/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/baxyz/zen-mods/discussions)
-- **Email**: support@zen-mods.dev (if configured)
+- **Email**: [support@zen-mods.dev](mailto:support@zen-mods.dev) (if configured)
 
 ## 🙏 Acknowledgments
 
