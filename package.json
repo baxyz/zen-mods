@@ -4,9 +4,6 @@
   "description": "Collection of mods for Zen browser to enhance user experience",
   "type": "module",
   "private": true,
-  "scripts": {
-    "build": "node scripts/build-all.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/baxyz/zen-mods.git"
