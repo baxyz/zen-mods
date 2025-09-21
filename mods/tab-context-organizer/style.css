@@ -9,62 +9,33 @@
   Organizes tab context menu by showing/hiding sections based on preferences
   ========================================================================== */
 
-/* Only apply styles when the mod is enabled */
-@media (-moz-bool-pref: "mod.tab_context_organizer.enabled") {
+/* Hide tab movement options if disabled */
+@media not (-moz-bool-pref: "mod.tab_context_organizer.show_tab_movement") {
 
-  /* Hide tab movement options if disabled */
-  @media not (-moz-bool-pref: "mod.tab_context_organizer.show_tab_movement") {
-
-    #context_moveToStart,
-    #context_moveToEnd,
-    #context_moveToNewWindow {
-      display: none !important;
-    }
+  #context_moveToStart,
+  #context_moveToEnd,
+  #context_moveToNewWindow {
+    display: none !important;
   }
+}
 
-  /* Hide workspace options if disabled */
-  @media not (-moz-bool-pref: "mod.tab_context_organizer.show_workspace") {
-    #context_moveTabOptions {
-      display: none !important;
-    }
+/* Hide workspace options if disabled */
+@media not (-moz-bool-pref: "mod.tab_context_organizer.show_workspace") {
+  #context_moveTabOptions {
+    display: none !important;
   }
+}
 
-  /* Hide device options if disabled */
-  @media not (-moz-bool-pref: "mod.tab_context_organizer.show_device") {
-    #context_sendTabToDevice {
-      display: none !important;
-    }
+/* Hide device options if disabled */
+@media not (-moz-bool-pref: "mod.tab_context_organizer.show_device") {
+  #context_sendTabToDevice {
+    display: none !important;
   }
+}
 
-  /* Hide container options if disabled */
-  @media not (-moz-bool-pref: "mod.tab_context_organizer.show_container") {
-    #context_reopenInContainer {
-      display: none !important;
-    }
-  }
-
-  /* Optional: Add visual separators between sections */
-  @media (-moz-bool-pref: "mod.tab_context_organizer.show_separators") {
-
-    /* Add separator after tab movement options */
-    #context_moveToNewWindow {
-      border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
-      margin-bottom: 0.25rem;
-      padding-bottom: 0.25rem;
-    }
-
-    /* Add separator after workspace options */
-    #context_moveTabOptions {
-      border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
-      margin-bottom: 0.25rem;
-      padding-bottom: 0.25rem;
-    }
-
-    /* Add separator after device options */
-    #context_sendTabToDevice {
-      border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
-      margin-bottom: 0.25rem;
-      padding-bottom: 0.25rem;
-    }
+/* Hide container options if disabled */
+@media not (-moz-bool-pref: "mod.tab_context_organizer.show_container") {
+  #context_reopenInContainer {
+    display: none !important;
   }
 }

@@ -13,8 +13,7 @@
     "Show/hide tab movement options (move to start/end, move to new window)",
     "Show/hide workspace movement options",
     "Show/hide device sync options",
-    "Show/hide container options",
-    "Optional visual separators between sections"
+    "Show/hide container options"
   ],
   "files": {
     "userChrome": "style.css",
@@ -23,12 +22,10 @@
   "preferences": {
     "enabled": true,
     "configurable": [
-      "mod.tab_context_organizer.enabled",
       "mod.tab_context_organizer.show_tab_movement",
       "mod.tab_context_organizer.show_workspace",
       "mod.tab_context_organizer.show_device",
-      "mod.tab_context_organizer.show_container",
-      "mod.tab_context_organizer.show_separators"
+      "mod.tab_context_organizer.show_container"
     ]
   },
   "tags": [
